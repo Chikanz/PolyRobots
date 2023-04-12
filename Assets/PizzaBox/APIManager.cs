@@ -21,13 +21,8 @@ namespace PolyPizza
 
         private const float MIN_BOUNDING_BOX_SIZE_FOR_SIZE_FIT = 0.001f;
 
-        // const string URL = "https://api.poly.pizza/v1/";
-
-        private const string URL = "http://127.0.0.1:3000/v1";
+        const string URL = "https://api.poly.pizza/v1/";
         public string APIKEY;
-
-        private List<GameObject> pooledObjects;
-        public int PoolSize = 2;
 
         [FormerlySerializedAs("CacheToFile")] public bool CacheModelsToFile = true;
 
@@ -65,6 +60,9 @@ namespace PolyPizza
         }
 
 
+        /// <summary>
+        /// Take a model from the Poly Pizza API and load it into the scene
+        /// </summary>
         public async UniTask<GameObject> MakeModel(Model model, float scale = 1, bool positionCenter = false)
         {
             var newObj = Instantiate(modelBlank);
@@ -122,6 +120,9 @@ namespace PolyPizza
             return www.SendWebRequest();
         }
 
+        /// <summary>
+        /// Given a model ID, get the model from the Poly Pizza API
+        /// 
         public async UniTask<Model> GetModelByID(string id)
         {
             var res = await GetReq($"{URL}/model/{id}");
@@ -137,6 +138,11 @@ namespace PolyPizza
             }
         }
 
+        /// <summary>
+        /// Search the Poly Pizza API for a model matching the search query
+        /// </summary>
+        /// <param name="keyword">The model you want to search for, eg Apple, Monkey, Gun etc </param>
+        /// <returns></returns>
         public async UniTask<Model> GetExactModel(string keyword)
         {
             if (keyword.Length <= 2) return null;
@@ -164,7 +170,11 @@ namespace PolyPizza
             }
         }
 
-        //todo cache
+        /// <summary>
+        /// Get the top models of all time from the Poly Pizza API
+        /// </summary>
+        /// <param name="limit">How many models to get. I think this caps at like 500 or something</param>
+        /// <returns>Model object array</returns>
         public async UniTask<Model[]> GetPopular(int limit)
         {
             int pagesToGet = Mathf.CeilToInt(limit / 32.0f);
@@ -208,6 +218,11 @@ namespace PolyPizza
             }
         }
 
+        /// <summary>
+        /// API returns the orbit of the camera, so we convert it to a rotation using
+        /// https://stackoverflow.com/questions/48841969/theta-phi-to-quaternion-rotation-unity3d-c-sharp
+        /// and then ignoring the x component and inverting the y component since the orbit is for the camera not model
+        /// </summary>
         public static Quaternion OrbitToRotation(Orbit orbit)
         {
             return Quaternion.Euler(0, (Mathf.Rad2Deg * orbit.theta), 0f);

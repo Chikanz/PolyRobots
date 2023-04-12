@@ -38,20 +38,11 @@ MonoBehaviour:
       m_ForceAssetFolder: 0
       m_AbsolutePath: C:/Users/pydon/Desktop/Frames
     m_FileName: image_<Frame>
-  <RecordMode>k__BackingField: 0
-  <FrameRatePlayback>k__BackingField: 0
-  frameRate: 30
-  <StartFrame>k__BackingField: 0
-  <EndFrame>k__BackingField: 0
-  <StartTime>k__BackingField: 0
-  <EndTime>k__BackingField: 0
-  <CapFrameRate>k__BackingField: 1
   outputFormat: 1
   captureAlpha: 0
   m_ImageInputSelector:
     m_Selected: gameViewInputSettings
     gameViewInputSettings:
-      <RecordTransparency>k__BackingField: 0
       m_OutputResolution:
         m_CustomWidth: 1024
         m_CustomHeight: 1024
@@ -61,10 +52,8 @@ MonoBehaviour:
           m_CustomAspectX: 1
           m_CustomAspectY: 1
           m_ImageAspect: 1
-      forceEvenSize: 0
       flipFinalOutput: 1
     cameraInputSettings:
-      <RecordTransparency>k__BackingField: 0
       m_OutputResolution:
         m_CustomWidth: 1024
         m_CustomHeight: 1024
@@ -74,13 +63,11 @@ MonoBehaviour:
           m_CustomAspectX: 1
           m_CustomAspectY: 1
           m_ImageAspect: 1
-      forceEvenSize: 0
       source: 2
       cameraTag: 
       flipFinalOutput: 0
       captureUI: 0
     camera360InputSettings:
-      <RecordTransparency>k__BackingField: 0
       source: 2
       cameraTag: 
       flipFinalOutput: 0
@@ -90,11 +77,9 @@ MonoBehaviour:
       m_OutputWidth: 1024
       m_OutputHeight: 2048
     renderTextureInputSettings:
-      <RecordTransparency>k__BackingField: 0
       renderTexture: {fileID: 0}
       flipFinalOutput: 0
     renderTextureSamplerSettings:
-      <RecordTransparency>k__BackingField: 0
       source: 1
       m_RenderWidth: 1280
       m_RenderHeight: 720
