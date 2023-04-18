@@ -10,6 +10,7 @@ The site has an API that allows for real time loading of models into a game engi
 This example shows how you might load, scale, position and generate colliders in the Untiy game engine (it's harder than you think!)
 
 ## 🖥 Install
+- Make sure git is installed
 - Load up the project in Unity 2020.2.26f1 and [install glTFast](https://github.com/atteneder/glTFast#installing).
 - Get your API key from [here](https://poly.pizza/settings/api) (you'll need an account).
 - Paste your api key into the API manager on the spawner object
