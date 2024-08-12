@@ -1,3 +1,5 @@
+# This example is old and stinky, use [Pizza box](https://github.com/Chikanz/pizzabox) instead! 
+
 <p align="center">
 <h1 align="center">Poly Robots</h1>
 <img alt="header image" src="https://static.poly.pizza/press/1.jpg">
